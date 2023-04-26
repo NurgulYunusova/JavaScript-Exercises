@@ -53,29 +53,82 @@
 
 // const updatedStudent = giveJobToStudent(student, "web developer");
 
-// TASK 3
-function handleObjects(obj, key, action) {
-  switch (action) {
-    case "get":
-      console.log(obj.key);
-      break;
-    case "add":
-      obj.emptyString = "";
-      console.log(obj);
-      break;
-    case "delete":
-      delete obj.key;
-      console.log(obj);
-      break;
-    default:
-      console.log(obj);
-  }
+// // TASK 3
+// const student = {
+//   name: "Maxim",
+//   programmingLanguage: "JavaScript",
+// };
+
+// function handleObjects(obj, key, action) {
+//   switch (action) {
+//     case "get":
+//       return obj.key;
+//     case "add":
+//       obj.emptyString = "";
+//       return obj;
+//     case "delete":
+//       delete obj[key];
+//       return obj;
+//     default:
+//       return obj;
+//   }
+// }
+
+// let result = handleObjects(student, "programmingLanguage", "delete");
+// console.log("result", result);
+
+// // TASK 4
+// function getKiller(suspectInfo, deadPeople) {
+//   for (let [key, value] of Object.entries(suspectInfo)) {
+//     if (deadPeople.every((deadPerson) => value.includes(deadPerson))) {
+//       console.log(key);
+//     }
+//   }
+// }
+
+// getKiller(
+//   {
+//     James: ["Jacob", "Bill", "Lucas"],
+//     Johnny: ["David", "Kyle", "Lucas"],
+//     Peter: ["Lucy", "Kyle"],
+//   },
+//   ["Lucas", "Bill"]
+// ); // Killer James
+
+// getKiller(
+//   {
+//     Brad: [],
+//     Megan: ["Ben", "Kevin"],
+//     Finn: [],
+//   },
+//   ["Ben"]
+// ); // Killer Megan
+
+// TASK 5
+function getWinner(applicants, winnerObject) {}
+
+function getRandomNumberInRange(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
-const student = {
-  name: "Maxim",
-  programmingLanguage: "JavaScript",
+const todaysWinner = {
+  prize: "$10,000",
 };
 
-const result = handleObjects(student, "programmingLanguage", "delete");
-console.log("result", result);
+const winnerApplicants = {
+  "001": {
+    name: "Max",
+    age: 25,
+  },
+  201: {
+    name: "Svetlana",
+    age: 20,
+  },
+  304: {
+    name: "Catherine",
+    age: 35,
+  },
+};
+
+const resultWinner = getWinner(winnerApplicants, todaysWinner);
+console.log("resultWinner", resultWinner); // { prize: '$10,000', name: 'Maxim', age: 25 }
